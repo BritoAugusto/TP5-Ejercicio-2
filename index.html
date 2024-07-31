@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,131 +21,70 @@
   <body>
     <header></header>
     <main>
-      <form class="container">
-        <div class="mb-3">
-          <label for="nombre" class="form-label"
-            >Ingrese su Nombre</label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="nombre"
-            placeholder="Ej: Juan Perez"
-            minlength="5"
-            maxlength="60"
-            required
-          />
-        </div>
-        <div class="mb-3">
-          <label for="edad" class="form-label"
-            >Ingrese su Edad</label
-          >
-          <input
-            type="number"
-            class="form-control"
-            id="edad"
-            placeholder=""
-          />
-        </div>
-        <div class="mb-3">
-          <label for="dni" class="form-label"
-            >Ingrese su DNI</label
-          >
-          <input
-            type="number"
-            class="form-control"
-            id="dni"
-            placeholder="Ej: 41817427"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="sexo" class="form-label"
-            >Sexo</label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="sexo"
-            placeholder="Ej: Masculino/Femenino"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="peso" class="form-label"
-            >Peso</label
-          >
-          <input
-            type="number"
-            class="form-control"
-            id="peso"
-            placeholder=""
-          />
-        </div>
-        <div class="mb-3">
-          <label for="altura" class="form-label"
-            >Altura(en centimetros, sin el punto)</label
-          >
-          <input
-            type="number"
-            class="form-control"
-            id="altura"
-            placeholder="Ej: 170"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="añoNacimiento" class="form-label"
-            >Año de Nacimiento</label
-          >
-          <input
-            type="number"
-            class="form-control"
-            id="añoNacimiento"
-            placeholder="Ej: 1999"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary">
-Enviar
-        </button>
-      </form>
-      <article class="container text-center">
-  <div class="row">
-    <div class="col-12">
-<h3 id="nombreIngresado" class="text-center">
-
-</h3>
-    </div>
-    <div class="col-5 border my-3">
-      Nombre de Generación
-    </div>
-    <div id="nombreGeneracion" class="col-5 border my-3">
-      1
-    </div>
-    <div class="col-5 border my-3">
-      Marco Temporal en España
-    </div>
-  </div>
-    <div  id="marcoTemporal" class="col-6 border my-3">
-      2
-    </div>
-    <div class="col-6 border my-3">
-      Poblacion de las Generaciones*
-    </div>
-    <div id="poblacionGeneracion" class="col-6 border my-6">
-      1
-    </div>
-    <div class="col-6 border my-3">
-      Circunstancia Histórica
-    </div>
-    <div id="circunstanciaHistorica" class="col-6 border my-6">
-      1
-    </div>
-    <div class="col-6 border my-3">
-      Rasgo Caracacteristico
-    </div>
-    <div id="rasgoCaracteristico" class="col-6 border my-6">
-      1
-    </div>
-  </div>
-</article>
+      <section class="container-">
+        <form class="text-center">
+          <div>
+            <h4>Ingrese Su Nombre</h4>
+            <input id="inputNombre" type="text" placeholder="nombre" />
+          </div>
+          <div>
+            <h4>Edad</h4>
+            <input id="inputEdad" type="text" placeholder="nombre" />
+          </div>
+          <div>
+            <h4>Dni</h4>
+            <input id="inputDni" type="text" placeholder="nombre" />
+          </div>
+          <div>
+            <h4>Sexo</h4>
+            <input id="inputSexo" type="text" placeholder="nombre" />
+          </div>
+          <div>
+            <h4>Peso</h4>
+            <input id="inputPeso" type="text" placeholder="nombre" />
+          </div>
+          <div>
+            <h4>Altura</h4>
+            <input id="inputAltura" type="number" placeholder="Altura" />
+          </div>
+          <div>
+            <h4>Año de Nacimiento</h4>
+            <input
+              id="inputAñoNacimiento"
+              type="number"
+              placeholder="Ej: 1999"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary my-3">Enviar</button>
+        </form>
+      </section>
+      <section class="row container">
+<div class="col-6 border border-dark">
+<p id="salidaNombre"></p>
+</div>
+<div class="col-6 border border-dark">
+<p id="salidaEdad"></p>
+</div>
+<div class="col-6 border border-dark">
+<p id="salidaDni"></p>
+</div>
+<div class="col-6 border border-dark">
+<p id="salidaSexo"></p>
+</div>
+<div class="col-6 border border-dark">
+<p id="salidaPeso"></p>
+</div>
+<div class="col-6 border border-dark">
+<p id="salidaAltura"></p>
+</div>
+<div class="col-12 border border-dark">
+<p id="salidaAñoNacimiento"></p>
+</div>
+      </section>
+      <article class="container">
+<button id="btnGeneracion" type="button" class="btn btn-primary my-3">Mostrar Generacion</button>
+<button id="btnEdad"  type="button" class="btn btn-primary my-3">¿Es mayor de edad?</button>
+      </article>
     </main>
     <footer class="bg-secondary text-center">&copy; Derechos Reservados</footer>
     <script
