@@ -42,6 +42,14 @@ class Persona {
     salidaAltura.innerHTML = `Altura: ${this.altura}`;
     salidaAñoNacimiento.innerHTML = `Año de Nacimiento: ${this.añoNacimiento}`;
   }
+
+  mayorEdad(){
+    if (this.añoNacimiento > 2006) {
+        alert('No es Mayor de Edad');
+    }else if (this.añoNacimiento <= 2006) {
+         alert("Si es Mayor de Edad");
+    }
+  }
 }
 const formulario = document.querySelector("form");
 const salidaNombre = document.querySelector("#salidaNombre");
@@ -52,52 +60,46 @@ const salidaPeso = document.querySelector("#salidaPeso");
 const salidaAltura = document.querySelector("#salidaAltura");
 const salidaAñoNacimiento = document.querySelector("#salidaAñoNacimiento");
 const btnGeneracion = document.querySelector("#btnGeneracion");
+const btnEdad = document.querySelector('#btnEdad');
+
+const obtenerDatosFormulario = ()=>{
+const inputNombre = document.querySelector("#inputNombre").value;
+const inputEdad = document.querySelector("#inputEdad").value;
+const inputDni = document.querySelector("#inputDni").value;
+const inputSexo = document.querySelector("#inputSexo").value;
+const inputPeso = document.querySelector("#inputPeso").value;
+const inputAltura = document.querySelector("#inputAltura").value;
+const inputAñoNacimiento = document.querySelector("#inputAñoNacimiento").value;
+return new Persona(
+  inputNombre,
+  inputEdad,
+  inputDni,
+  inputSexo,
+  inputPeso,
+  inputAltura,
+  inputAñoNacimiento
+);
+}
+
 
 const mostrarNombre = (e) => {
   e.preventDefault();
-  const inputNombre = document.querySelector("#inputNombre").value;
-  const inputEdad = document.querySelector("#inputEdad").value;
-  const inputDni = document.querySelector("#inputDni").value;
-  const inputSexo = document.querySelector("#inputSexo").value;
-  const inputPeso = document.querySelector("#inputPeso").value;
-  const inputAltura = document.querySelector("#inputAltura").value;
-  const inputAñoNacimiento = document.querySelector(
-    "#inputAñoNacimiento"
-  ).value;
-  const personaRandom = new Persona(
-    inputNombre,
-    inputEdad,
-    inputDni,
-    inputSexo,
-    inputPeso,
-    inputAltura,
-    inputAñoNacimiento
-  );
+  const personaRandom = obtenerDatosFormulario();
   personaRandom.mostrarDatos();
-  formulario.reset();
+ 
 };
 
 const mostrarGeneracion = () => {
-  const inputNombre = document.querySelector("#inputNombre").value;
-  const inputEdad = document.querySelector("#inputEdad").value;
-  const inputDni = document.querySelector("#inputDni").value;
-  const inputSexo = document.querySelector("#inputSexo").value;
-  const inputPeso = document.querySelector("#inputPeso").value;
-  const inputAltura = document.querySelector("#inputAltura").value;
-  const inputAñoNacimiento = document.querySelector(
-    "#inputAñoNacimiento"
-  ).value;
-  const personaRandom = new Persona(
-    inputNombre,
-    inputEdad,
-    inputDni,
-    inputSexo,
-    inputPeso,
-    inputAltura,
-    inputAñoNacimiento
-  );
+  const personaRandom = obtenerDatosFormulario();
   personaRandom.mostrarGeneracion();
+  
 };
+
+const mayorEdad = ()=>{
+    const personaRandom = obtenerDatosFormulario();
+    personaRandom.mayorEdad();
+}
 
 formulario.addEventListener("submit", mostrarNombre);
 btnGeneracion.addEventListener("click", mostrarGeneracion);
+btnEdad.addEventListener('click', mayorEdad);
