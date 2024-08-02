@@ -19,71 +19,129 @@
     <title>TP5-Ejercicio2</title>
   </head>
   <body>
-    <header></header>
+    <header>
+      <h1 class="text-center text-info my-3">
+        Ingrese sus datos para obtener información sobre su generación
+      </h1>
+    </header>
     <main>
       <section class="container-">
         <form class="text-center">
-          <div>
+          <div class="my-4">
             <h4>Ingrese Su Nombre</h4>
-            <input id="inputNombre" type="text" placeholder="nombre" />
+            <input
+              id="inputNombre"
+              type="text"
+              placeholder="Ej: Juan Perez"
+              minlength="5"
+              maxlength="100"
+              required
+            />
           </div>
-          <div>
+          <div class="my-3">
             <h4>Edad</h4>
-            <input id="inputEdad" type="text" placeholder="nombre" />
+            <input
+              id="inputEdad"
+              type="text"
+              placeholder="Ingrese su edad"
+              minlength="1"
+              maxlength="3"
+              required
+            />
           </div>
           <div>
-            <h4>Dni</h4>
-            <input id="inputDni" type="text" placeholder="nombre" />
+            <h4>DNI</h4>
+            <p>(sin puntos ni comas)</p>
+            <input
+              id="inputDni"
+              type="text"
+              placeholder="Ej: 41817423"
+              minlength="8"
+              maxlength="8"
+              required
+            />
           </div>
-          <div>
+          <div class="my-3">
             <h4>Sexo</h4>
-            <input id="inputSexo" type="text" placeholder="nombre" />
+            <input
+              id="inputSexo"
+              type="text"
+              placeholder="Masculino/Femenino"
+              minlength="3"
+              maxlength="20"
+              required
+            />
           </div>
           <div>
             <h4>Peso</h4>
-            <input id="inputPeso" type="text" placeholder="nombre" />
+            <input
+              class="text-center"
+              id="inputPeso"
+              type="text"
+              placeholder="Ej: 68"
+              minlength="1"
+              maxlength="10"
+              required
+            />
           </div>
-          <div>
+          <div class="my-3">
             <h4>Altura</h4>
-            <input id="inputAltura" type="number" placeholder="Altura" />
+            <p>(en centimetros, sin puntos ni comas)</p>
+            <input
+              class="text-center"
+              id="inputAltura"
+              type="number"
+              placeholder="Ej: 179"
+              minlength="1"
+              maxlength="10"
+              required
+            />
           </div>
-          <div>
+          <div class="my-3">
             <h4>Año de Nacimiento</h4>
             <input
               id="inputAñoNacimiento"
               type="number"
               placeholder="Ej: 1999"
+              minlength="4"
+              maxlength="4"
+              required
             />
           </div>
           <button type="submit" class="btn btn-primary my-3">Enviar</button>
         </form>
       </section>
       <section class="row container">
-<div class="col-6 border border-dark">
-<p id="salidaNombre"></p>
-</div>
-<div class="col-6 border border-dark">
-<p id="salidaEdad"></p>
-</div>
-<div class="col-6 border border-dark">
-<p id="salidaDni"></p>
-</div>
-<div class="col-6 border border-dark">
-<p id="salidaSexo"></p>
-</div>
-<div class="col-6 border border-dark">
-<p id="salidaPeso"></p>
-</div>
-<div class="col-6 border border-dark">
-<p id="salidaAltura"></p>
-</div>
-<div class="col-12 border border-dark">
-<p id="salidaAñoNacimiento"></p>
-</div>
+        <div class="col-6 border border-dark">
+          <p id="salidaNombre"></p>
+        </div>
+        <div class="col-6 border border-dark">
+          <p id="salidaEdad"></p>
+        </div>
+        <div class="col-6 border border-dark">
+          <p id="salidaDni"></p>
+        </div>
+        <div class="col-6 border border-dark">
+          <p id="salidaSexo"></p>
+        </div>
+        <div class="col-6 border border-dark">
+          <p id="salidaPeso"></p>
+        </div>
+        <div class="col-6 border border-dark">
+          <p id="salidaAltura"></p>
+        </div>
+        <div class="col-12 border border-dark">
+          <p id="salidaAñoNacimiento"></p>
+        </div>
       </section>
-      <article class="container">
-<button id="btnGeneracion" type="button" class="btn btn-primary my-3">Mostrar Generacion</button>
-<button id="btnEdad"  type="button" class="btn btn-primary my-3">¿Es mayor de edad?</button>
+      <article class="container text-center d-none" id="articleBotones">
+        <button id="btnGeneracion" type="button" class="btn btn-primary my-3">
+          Mostrar Generacion
+        </button>
+        <button id="btnEdad" type="button" class="btn btn-primary my-3">
+          ¿Es mayor de edad?
+        </button>
+        <button id="btnGenerarPersona" onclick="resetForm()" class="btn btn-primary text-center my-3">Ingresar otra Persona</button>
       </article>
     </main>
     <footer class="bg-secondary text-center">&copy; Derechos Reservados</footer>

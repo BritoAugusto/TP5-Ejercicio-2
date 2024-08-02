@@ -47,7 +47,7 @@ class Persona {
     if (this.añoNacimiento > 2006) {
         alert('No es Mayor de Edad');
     }else if (this.añoNacimiento <= 2006) {
-         alert("Si es Mayor de Edad");
+         alert("Es Mayor de Edad");
     }
   }
 }
@@ -61,6 +61,10 @@ const salidaAltura = document.querySelector("#salidaAltura");
 const salidaAñoNacimiento = document.querySelector("#salidaAñoNacimiento");
 const btnGeneracion = document.querySelector("#btnGeneracion");
 const btnEdad = document.querySelector('#btnEdad');
+const botonesMostrar = document.querySelector('#articleBotones');
+const btnGenerarPersona = document.querySelector("#btnGenerarPersona");
+
+
 
 const obtenerDatosFormulario = ()=>{
 const inputNombre = document.querySelector("#inputNombre").value;
@@ -86,6 +90,8 @@ const mostrarNombre = (e) => {
   e.preventDefault();
   const personaRandom = obtenerDatosFormulario();
   personaRandom.mostrarDatos();
+   botonesMostrar.classList.remove('d-none');
+  botonesMostrar.classList.add('d-block');
  
 };
 
@@ -100,6 +106,23 @@ const mayorEdad = ()=>{
     personaRandom.mayorEdad();
 }
 
+const resetForm = ()=> {
+  formulario.reset();
+   formulario.reset();
+   salidaNombre.innerHTML = "";
+   salidaEdad.innerHTML = "";
+   salidaDni.innerHTML = "";
+   salidaSexo.innerHTML = "";
+   salidaPeso.innerHTML = "";
+   salidaAltura.innerHTML = "";
+   salidaAñoNacimiento.innerHTML = "";
+   botonesMostrar.classList.remove("d-block");
+   botonesMostrar.classList.add("d-none");
+}
+
+
 formulario.addEventListener("submit", mostrarNombre);
 btnGeneracion.addEventListener("click", mostrarGeneracion);
 btnEdad.addEventListener('click', mayorEdad);
+
+
