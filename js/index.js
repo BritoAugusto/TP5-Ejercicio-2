@@ -20,34 +20,38 @@ class Persona {
   }
   mostrarGeneracion() {
     if (this.añoNacimiento >= 1994 && this.añoNacimiento <= 2010) {
-      alert(`pertenece a la Generacion Z`);
+      alert(`Pertenece a la Generacion Z. Un rasgo característico de ésta generación es la 'Irreverencia 😋`);
     } else if (this.añoNacimiento <= 1993 && this.añoNacimiento >= 1981) {
-      alert("Perteneces a la generacion Y (millennials)");
+      alert("Perteneces a la generacion Y (millennials). Un rasgo característico de ésta generación es la 'Frustración 😖'");
     } else if (this.añoNacimiento <= 1980 && this.añoNacimiento >= 1969) {
-      alert("Perteneces a la Generacion X");
+      alert(
+        "Perteneces a la Generacion X. Un rasgo característico de ésta generación es la 'Obsesión al Éxito 😎'"
+      );
     } else if (this.añoNacimiento <= 1968 && this.añoNacimiento >= 1949) {
-      alert("Perteneces a la Generacion Baby Boom");
+      alert(
+        "Perteneces a la Generacion Baby Boom. Un rasgo característico de ésta generación es la 'Ambición 🤑'"
+      );
     } else if (this.añoNacimiento <= 1948 && this.añoNacimiento >= 1930) {
       alert(
-        "Perteneces a la generacion Silent Generation(Los Niños de la posguerra)"
+        "Perteneces a la generacion Silent Generation(Los Niños de la posguerra). Un rasgo característico de ésta generación es la 'Austeridad 😐'"
       );
     }
   }
   mostrarDatos() {
-    salidaNombre.innerHTML = `Nombre: ${this.nombre}`;
-    salidaEdad.innerHTML = `Edad: ${this.edad}`;
-    salidaDni.innerHTML = `DNI: ${this.dni}`;
-    salidaSexo.innerHTML = `Sexo: ${this.sexo}`;
-    salidaPeso.innerHTML = `Peso: ${this.peso}`;
-    salidaAltura.innerHTML = `Altura: ${this.altura}`;
-    salidaAñoNacimiento.innerHTML = `Año de Nacimiento: ${this.añoNacimiento}`;
+    salidaNombre.innerHTML = `<strong>NombreyApellido: ${this.nombre}</strong>`;
+    salidaEdad.innerHTML = `<strong>Edad: ${this.edad}</strong>`;
+    salidaDni.innerHTML = `<strong>DNI: ${this.dni}</strong>`;
+    salidaSexo.innerHTML = `<strong>Sexo: ${this.sexo}`;
+    salidaPeso.innerHTML = `<strong>Peso: ${this.peso} Kg</strong>`;
+    salidaAltura.innerHTML = `<strong>Altura: ${this.altura} Cm</strong>`;
+    salidaAñoNacimiento.innerHTML = `<strong>Año de Nacimiento: ${this.añoNacimiento}</strong>`;
   }
 
   mayorEdad(){
     if (this.añoNacimiento > 2006) {
-        alert('No es Mayor de Edad');
+        alert('La persona ingresada No es Mayor de Edad');
     }else if (this.añoNacimiento <= 2006) {
-         alert("Es Mayor de Edad");
+         alert("La persona ingresada es Mayor de Edad");
     }
   }
 }
@@ -107,7 +111,6 @@ const mayorEdad = ()=>{
 }
 
 const resetForm = ()=> {
-  formulario.reset();
    formulario.reset();
    salidaNombre.innerHTML = "";
    salidaEdad.innerHTML = "";
